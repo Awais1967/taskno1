@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is a Request?</title>
+    <link rel="stylesheet" href="/task1/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="whatishttp.html">What is HTTP and HTTPS</a></li>
+          <li><a href="howisawebpage.html">How is a web page downloaded</a></li>
+          <li><a href="whatisrequest.html">What is a request</a></li>
+          <li><a href="whentouseget.html">When to use GET and POST</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <img
+        class="responsive-img"
+        src="/task1/images/request.png"
+        alt="HTTP Request"
+      />
+      <h1>What is a Request?</h1>
+      <section>
+        <h2>Overview of HTTP Requests</h2>
+        <p>
+          An HTTP request is a message sent by the client to a server in order
+          to fetch resources or perform operations. Each HTTP request consists
+          of several parts: the request line, headers, and an optional body.
+        </p>
+      </section>
+      <section>
+        <h2>Request Line</h2>
+        <p>
+          The request line is the first line in an HTTP request message. It
+          contains the method, the URI (Uniform Resource Identifier), and the
+          HTTP version. For example:
+        </p>
+        <pre>
+GET /index.html HTTP/1.1
+            </pre
+        >
+        <p>
+          In this example, <strong>GET</strong> is the method,
+          <strong>/index.html</strong> is the URI, and
+          <strong>HTTP/1.1</strong> is the HTTP version.
+        </p>
+      </section>
+      <section>
+        <h2>Request Headers</h2>
+        <p>
+          Headers provide additional information about the request. They are
+          key-value pairs sent in the request message. Common headers include:
+        </p>
+        <ul>
+          <li>
+            <strong>Host:</strong> Specifies the domain name of the server
+            (e.g., Host: www.example.com).
+          </li>
+          <li>
+            <strong>User-Agent:</strong> Provides information about the client
+            software making the request (e.g., User-Agent: Mozilla/5.0).
+          </li>
+          <li>
+            <strong>Accept:</strong> Informs the server about the types of data
+            the client can process (e.g., Accept: text/html).
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Request Body</h2>
+        <p>
+          The body of a request is optional and is used to send data to the
+          server. It is typically used with methods like POST and PUT. For
+          example, a POST request to submit a form might include data in the
+          body:
+        </p>
+        <pre>
+POST /submit-form HTTP/1.1
+Host: www.example.com
+Content-Type: application/x-www-form-urlencoded
+
+name=John&age=30
+            </pre
+        >
+      </section>
+      <section>
+        <h2>Common HTTP Methods</h2>
+        <p>HTTP defines several methods, each serving a different purpose:</p>
+        <ul>
+          <li>
+            <strong>GET:</strong> Requests data from a specified resource. It is
+            the most common method used for retrieving data.
+          </li>
+          <li>
+            <strong>POST:</strong> Submits data to be processed to a specified
+            resource. It is often used for submitting form data.
+          </li>
+          <li>
+            <strong>PUT:</strong> Updates a current resource with new data.
+          </li>
+          <li><strong>DELETE:</strong> Removes the specified resource.</li>
+          <li>
+            <strong>HEAD:</strong> Similar to GET, but it only requests the
+            headers of a resource, not the body.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Common HTTP Status Codes</h2>
+        <p>
+          Status codes are issued by a server in response to an HTTP request.
+          They indicate whether the request has been successfully completed.
+          Some common status codes include:
+        </p>
+        <ul>
+          <li><strong>200 OK:</strong> The request was successful.</li>
+          <li>
+            <strong>404 Not Found:</strong> The requested resource could not be
+            found.
+          </li>
+          <li>
+            <strong>500 Internal Server Error:</strong> The server encountered
+            an error and could not complete the request.
+          </li>
+          <li>
+            <strong>301 Moved Permanently:</strong> The resource has been
+            permanently moved to a new location.
+          </li>
+          <li>
+            <strong>302 Found:</strong> The resource has been temporarily moved
+            to a new location.
+          </li>
+        </ul>
+      </section>
+    </main>
+    <!-- <footer>
+      <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </footer> -->
+  </body>
+</html>

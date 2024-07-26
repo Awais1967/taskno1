@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>When to Use GET and POST?</title>
+    <link rel="stylesheet" href="/task1/style.css" />
+    
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="whatishttp.html">What is HTTP and HTTPS</a></li>
+          <li><a href="howisawebpage.html">How is a web page downloaded</a></li>
+          <li><a href="whatisrequest.html">What is a request</a></li>
+          <li><a href="whentouseget.html">When to use GET and POST</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <img
+        class="responsive-img"
+        src="/task1/images/Untitled.jpeg"
+        alt="GET vs POST"
+      />
+      <h1>When to Use GET and POST?</h1>
+      <section>
+        <h2>Overview of GET and POST Methods</h2>
+        <p>
+          GET and POST are the two most commonly used HTTP methods for making
+          requests to a server. Understanding when to use each is crucial for
+          building efficient and secure web applications.
+        </p>
+      </section>
+      <section>
+        <h2>GET Method</h2>
+        <p>
+          The GET method is used to retrieve data from a server. It requests
+          data from a specified resource, and the parameters are included in the
+          URL. For example:
+        </p>
+        <pre>GET /search?q=example HTTP/1.1</pre>
+        <p>Key characteristics of GET:</p>
+        <ul>
+          <li>
+             Read-only:  GET requests should not modify any data on the
+            server.
+          </li>
+          <li>
+             Idempotent:  Multiple identical GET requests should have the same
+            effect as a single request.
+          </li>
+          <li>
+             Cacheable:  GET requests can be cached by browsers, which helps
+            to reduce server load and improve performance.
+          </li>
+          <li>
+             Limited Data:  The amount of data that can be sent is limited by
+            the URL length.
+          </li>
+        </ul>
+        <p>Use GET when you need to:</p>
+        <ul>
+          <li>Retrieve data without causing any side effects.</li>
+          <li>
+            Load a web page or retrieve data that doesn't need to be secured.
+          </li>
+          <li>Bookmark or share the URL with parameters included.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>POST Method</h2>
+        <p>
+          The POST method is used to send data to a server to create or update a
+          resource. The data is included in the body of the request, not in the
+          URL. For example:
+        </p>
+        <pre>
+POST /submit-form HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=John&age=30</pre
+        >
+        <p>Key characteristics of POST:</p>
+        <ul>
+          <li>
+             Modifies Data:  POST requests can create or update resources on
+            the server.
+          </li>
+          <li>
+             Not Idempotent:  Multiple identical POST requests may result in
+            different outcomes.
+          </li>
+          <li> Not Cacheable:  POST requests are generally not cached.</li>
+          <li>
+             Unlimited Data:  The amount of data that can be sent is not
+            limited by the URL length.
+          </li>
+        </ul>
+        <p>Use POST when you need to:</p>
+        <ul>
+          <li>
+            Submit form data securely, such as login credentials or payment
+            information.
+          </li>
+          <li>Upload files to a server.</li>
+          <li>Create a new resource on the server.</li>
+          <li>Send data that exceeds the URL length limit.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Security Considerations</h2>
+        <p>Security is a critical factor in choosing between GET and POST:</p>
+        <ul>
+          <li>
+            GET: Parameters are visible in the URL, making it less secure
+            for sensitive data. Avoid using GET for transmitting passwords or
+            other sensitive information.
+          </li>
+          <li>
+            POST: Data is included in the body of the request, making it
+            more suitable for sensitive information. Always use POST for form
+            submissions that include passwords, personal data, or payment
+            details.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Examples of GET and POST</h2>
+        <p>Here are some typical use cases for GET and POST:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Use Case</th>
+              <th>Method</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Search Query</td>
+              <td>GET</td>
+            </tr>
+            <tr>
+              <td>Login Form</td>
+              <td>POST</td>
+            </tr>
+            <tr>
+              <td>Fetching Data (e.g., API call)</td>
+              <td>GET</td>
+            </tr>
+            <tr>
+              <td>Submitting Form Data</td>
+              <td>POST</td>
+            </tr>
+            <tr>
+              <td>Uploading a File</td>
+              <td>POST</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <br>
+    <!-- <footer>
+      <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </footer> -->
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How is a web page downloaded?</title>
+    <link rel="stylesheet" href="/task1/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="whatishttp.html">What is HTTP and HTTPS</a></li>
+          <li><a href="howisawebpage.html">How is a web page downloaded</a></li>
+          <li><a href="whatisrequest.html">What is a request</a></li>
+          <li><a href="whentouseget.html">When to use GET and POST</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <img
+        class="responsive-img"
+        src="/task1/images/web-page-download.png"
+        alt="Web Page Download Process"
+      />
+      <h1>How is a web page downloaded?</h1>
+      <section>
+        <h2>Overview</h2>
+        <p>
+          When you type a URL into your web browser and press Enter, a series of
+          HTTP requests and responses are exchanged between your browser and the
+          web server to download and display the webpage. Let's examine the
+          sequence of these requests using the browser's network console.
+        </p>
+      </section>
+      <section>
+        <h2>Using the Network Console</h2>
+        <p>To understand how a web page is downloaded, follow these steps:</p>
+        <ol>
+          <li>Open your web browser (e.g., Google Chrome).</li>
+          <li>Press <strong>F12</strong> to open the Developer Tools.</li>
+          <li>Navigate to the <strong>Network</strong> tab.</li>
+          <li>
+            Type a URL into the address bar and press Enter to load the page.
+          </li>
+        </ol>
+        <p>
+          You will see a list of network requests made by your browser to load
+          the page. Each row represents a request for a resource, such as an
+          HTML file, CSS file, JavaScript file, or image.
+        </p>
+      </section>
+      <section>
+        <h2>HTTP Requests and Responses</h2>
+        <p>
+          Here is an example trace of the HTTP requests made when loading a
+          simple webpage:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Resource</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Size</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>index.html</td>
+              <td>document</td>
+              <td>200 OK</td>
+              <td>2.3 KB</td>
+              <td>100 ms</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>style.css</td>
+              <td>stylesheet</td>
+              <td>200 OK</td>
+              <td>1.1 KB</td>
+              <td>50 ms</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>script.js</td>
+              <td>script</td>
+              <td>200 OK</td>
+              <td>1.4 KB</td>
+              <td>75 ms</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>logo.png</td>
+              <td>image</td>
+              <td>200 OK</td>
+              <td>5.2 KB</td>
+              <td>120 ms</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Annotated Explanation</h2>
+        <p>Let's analyze the sequence of HTTP requests:</p>
+        <div class="grid">
+          <div>
+            <h3>1. index.html</h3>
+            <p>
+              This is the main HTML document that defines the structure of the
+              webpage. The browser requests this file first. Status 200 OK
+              indicates the request was successful.
+            </p>
+          </div>
+          <div>
+            <h3>2. style.css</h3>
+            <p>
+              This stylesheet file is used to style the HTML document. The
+              browser requests this file after parsing the HTML and finding the
+              link to the CSS file.
+            </p>
+          </div>
+          <div>
+            <h3>3. script.js</h3>
+            <p>
+              This JavaScript file contains the script that adds interactivity
+              to the webpage. The browser requests this file after finding the
+              script tag in the HTML.
+            </p>
+          </div>
+          <div>
+            <h3>4. logo.png</h3>
+            <p>
+              This image file is used to display the logo on the webpage. The
+              browser requests this file when it encounters the image tag in the
+              HTML.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <br>
+    
+  </body>
+</html>
